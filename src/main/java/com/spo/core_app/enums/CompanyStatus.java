@@ -1,6 +1,6 @@
 package com.spo.core_app.enums;
 
-public enum Status {
+public enum CompanyStatus {
     DRAFT,
     IN_REVIEW,
     APPROVED,
