@@ -5,7 +5,8 @@ import com.spo.core_app.models.GlobalRecord;
 import java.time.LocalDateTime;
 
 public class SystemUtility {
-    // since we set this for all the classes we create and get from the user we have kept setGlobalRecordFields as a utilityFunc
+    // since we set this for all the classes we create and get from the user
+    // we have kept setGlobalRecordFields as a utilityFunc
 
     public static void setGlobalRecordProperties(GlobalRecord globalRecord,
                                                  LocalDateTime createdAt,

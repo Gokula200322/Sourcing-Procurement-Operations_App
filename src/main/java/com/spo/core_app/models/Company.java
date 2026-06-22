@@ -2,14 +2,17 @@ package com.spo.core_app.models;
 
 
 import com.spo.core_app.enums.CompanyType;
-import com.spo.core_app.enums.Status;
+import com.spo.core_app.enums.CompanyStatus;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Enumerated;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.experimental.SuperBuilder;
+
+import java.util.List;
 
 @Data
 @NoArgsConstructor
@@ -17,7 +20,7 @@ import lombok.experimental.SuperBuilder;
 @SuperBuilder
 @Entity
 @Table(name = "companies")
-public class company extends GlobalRecord{
+public class Company extends GlobalRecord{
 
     private String companyId;
     private String legalName;
@@ -25,7 +28,8 @@ public class company extends GlobalRecord{
     @Enumerated
     private CompanyType companyType;
     @Enumerated
-    private Status status;
+    private CompanyStatus status;
+    private String mainLogoUrl;
     private String taxId;
     private String taxRegNumber;
     private String govRegNumber;
@@ -37,6 +41,11 @@ public class company extends GlobalRecord{
     private String addressLine3;
     private String city;
     private String country;
+
+    @OneToMany
+    private List<Activity> activities;
+    @OneToMany
+    private List<Attachment> attachments;
 
 
 
