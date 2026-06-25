@@ -1,15 +1,14 @@
-package com.spo.core_app.models;
+package com.spo.core_app.dtos.request;
 
-
+import com.spo.core_app.enums.CompanyStatus;
+import com.spo.core_app.enums.CompanyType;
 import com.spo.core_app.enums.Currency;
-import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
-import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import lombok.experimental.SuperBuilder;
+import org.springframework.stereotype.Component;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
@@ -17,20 +16,33 @@ import java.time.LocalDate;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@SuperBuilder
-@Entity
-@Table(name = "procurement_company")
-public class ProcurementCompany extends Company {
+@Component
+public class ProcurementCompanyRegistrationDto {
 
-    private String procurementCompanyId;
+    private String legalName;
+    private String displayName;
+    private CompanyType companyType;
+
+    private CompanyStatus companyStatus;
+    private String taxId;
+    private String taxRegNumber;
+    private String govRegNumber;
+    private String primaryContactNumber;
+    private String contactName;
+    private String contactEmail;
+    private String addressLine1;
+    private String addressLine2;
+    private String addressLine3;
+    private String city;
+    private String country;
+
+
 
     //Procurement Organization Details
     private String procurementHead;
-    private String procurementEmail;
-    private String procurementPhone;
 
     //Financial Control
-    @Enumerated
+
     private Currency baseCurrency;
     private BigDecimal annualProcurementBudget;
     private BigDecimal availableBudget;
@@ -46,7 +58,7 @@ public class ProcurementCompany extends Company {
     private BigDecimal rfqRequiredThreashold;
     private BigDecimal rfpRequiredThreshold;
 
-   // Procurement Policies
+    // Procurement Policies
 
     private Boolean contractRequired;
 
@@ -55,25 +67,6 @@ public class ProcurementCompany extends Company {
     private String erpSystem;
     private String erpCompanyCode;
     private String costCenterPrefix; // account for diff Products like Healthcare,Banking etc
-
-    //Procurement Metrics
-
-    private Integer activeSuppliers;
-    private Integer activeContracts;
-    private Integer activePurchaseRequests;
-    private Integer activePurchaseOrders;
-
-
-    // Compliance
-    private Boolean complianceReviewRequired;
-    private Boolean legalReviewRequired;
-
-    //Dates
-
-    private LocalDate goLiveDate;
-    private LocalDate lastAuditDate;
-
-    private String remarks;
 
 
 }

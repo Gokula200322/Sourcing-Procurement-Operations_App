@@ -28,7 +28,7 @@ public class Company extends GlobalRecord{
     @Enumerated
     private CompanyType companyType;
     @Enumerated
-    private CompanyStatus status;
+    private CompanyStatus companyStatus;
     private String mainLogoUrl;
     private String taxId;
     private String taxRegNumber;
@@ -46,16 +46,6 @@ public class Company extends GlobalRecord{
     private List<Activity> activities;
     @OneToMany
     private List<Attachment> attachments;
-
-
-
-
-
-
-
-
-
-
 
 
 }

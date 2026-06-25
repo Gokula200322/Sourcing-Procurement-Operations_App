@@ -1,6 +1,6 @@
 package com.spo.core_app.jobs;
 
-import com.spo.core_app.contants.SystemConstant;
+import com.spo.core_app.constants.SystemConstant;
 import com.spo.core_app.models.Operation;
 import com.spo.core_app.repositories.OperationRepository;
 import com.spo.core_app.utilities.SystemUtility;
@@ -78,7 +78,7 @@ public class SystemJob {
 
 
 
-    @Scheduled(fixedRate = 10000, initialDelay = 5000)
+    @Scheduled(fixedRate = 30000, initialDelay = 5000)
     public void loadAllOperations(){
         // or noramlly also we can call getAllSystemOperations();
         // if local variable is same as instance var then using this is advised to differentiate.
