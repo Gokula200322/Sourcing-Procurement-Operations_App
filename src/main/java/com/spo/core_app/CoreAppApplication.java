@@ -11,6 +11,6 @@ public class CoreAppApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(CoreAppApplication.class, args);
 	}
-	// adding this line to check if the chenges reflect in this atsk1 branch and
+	// adding this line to check if the changes reflect in this atsk1 branch and
 	// whether im able to create a pull request on main.go
 }
